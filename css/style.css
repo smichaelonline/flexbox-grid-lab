@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #1a6060;
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -49,8 +49,8 @@ main {
 }
 
 img {
-  border-radius: 50%;
-  border: 3px green solid; 
+  border-radius: 60%;
+  border: 3px #74c78f solid; 
 }
 
 h1 {
@@ -59,7 +59,7 @@ h1 {
 }
 
 #occupation {
-  background-color: lightgrey;
+  background-color: #f4f3f3;
   padding: 4px 0; 
 }
 
@@ -89,20 +89,68 @@ p{
 }
 
 #contact > p:first-child {
-  background-color: lightgreen;
+  background-color: #66d18d;
   height: 50px;
 }
 
 #contact > p:last-child {
-  background-color: darkgreen;
+  background-color: #54c07b;
   height: 50px;
 }
 
 @media only screen and (min-width: 768px){
-  main { 
-    width: 450px;
+  main {
+    width: 450px; 
+    display: grid; 
+    text-align: left;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+    "status name"
+    "img occ"
+    "img brand"
+    "contact offer"
+    ;
   }
+
+  #status {
+    grid-area: status; 
+    justify-content: flex-start;
+    padding: 8px; 
+  }
+
   #brand {
     display: block;
+    grid-area: brand;
+    padding: 8px;
+    background-color: #f4f3f3;
+    font-size: 12px;
+  }
+
+  img {
+    grid-area: img; 
+  }
+
+  #occupation {
+    grid-area: occ;
+    background-color: #f4f3f3;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  #name {
+    grid-area: name; 
+    background-color: #f4f3f3;
+    text-align: center; 
+  }
+
+  #offer{
+    grid-area: offer;
+    background-color: #f4f3f3;
+    padding:6px; 
+  }
+
+  #contact {
+    grid-area: contact;
   }
 }
+
